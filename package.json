@@ -1,8 +1,8 @@
 {
-  "name": "@sushan/warped_bloc_react",
+  "name": "warped_bloc_react",
   "version": "0.1.0",
   "description": "BLoC like State Management Solution For React",
-  "private": true,
+  "private": false,
   "author": "SushanShakya <sushaanshakya88@gmail.com>",
   "license": "MIT",
   "repository": {
