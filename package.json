@@ -1,7 +1,18 @@
 {
-  "name": "warped_bloc_react",
+  "name": "@sushan/warped_bloc_react",
   "version": "0.1.0",
+  "description": "BLoC like State Management Solution For React",
   "private": true,
+  "author": "SushanShakya <sushaanshakya88@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SushanShakya/warped_bloc_react"
+  },
+  "bugs": {
+    "url": "https://github.com/SushanShakya/warped_bloc_react/issues"
+  },
+  "homepage": "https://github.com/SushanShakya/warped_bloc_react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
