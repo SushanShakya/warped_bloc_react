@@ -1,10 +1,17 @@
 {
   "name": "warped_bloc_react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BLoC like State Management Solution For React",
   "private": false,
   "author": "SushanShakya <sushaanshakya88@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "state_management",
+    "State Management",
+    "bloc",
+    "easy",
+    "productivity"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SushanShakya/warped_bloc_react"
@@ -29,7 +36,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
