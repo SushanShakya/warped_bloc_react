@@ -10,6 +10,7 @@ import {
     BlocConsumer,
     BlocListener,
     useBloc,
+    StateChecker
 } from './src/index'
 
 export {
@@ -24,4 +25,5 @@ export {
     BlocConsumer,
     BlocListener,
     useBloc,
+    StateChecker
 }

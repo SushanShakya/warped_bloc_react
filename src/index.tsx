@@ -3,6 +3,7 @@ import AsyncCubit from './core/cubit/AsyncCubit';
 import { type BlocState, DataState, ErrorState, InitialState, LoadingState } from './core/states/states';
 import { BlocBuilder, BlocConsumer, BlocListener } from './core/widgets/BlocComponents';
 import useBloc from './core/hooks/useBloc';
+import { StateChecker } from './core/utils/StateChecker';
 
 export {
     Cubit,
@@ -16,4 +17,5 @@ export {
     BlocConsumer,
     BlocListener,
     useBloc,
+    StateChecker,
 };
