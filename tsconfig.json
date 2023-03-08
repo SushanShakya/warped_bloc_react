@@ -2,9 +2,13 @@
   "compilerOptions": {
     "target": "es5",
     "outDir": "./lib",
-    "strict": true,
-    "module": "CommonJS",    
+    "strict": false,
+    "module": "CommonJS",
     "declaration": true,
+    "jsx": "react-jsx",
+    "pretty": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": [
     "src"

@@ -17,13 +17,13 @@ const BlocBuilder: FC<BuilderProps> = ({
     let [state, setState] = useState(bloc.state);
 
     useEffect(() => {
-        bloc.listen((state: BlocState) => {
+        let cur = bloc.listen((state: BlocState) => {
             console.log(state);
             setState(state);
         });
 
         return () => {
-            bloc.removeListener();
+            bloc.removeListener(cur);
         }
     }, [bloc]);
 

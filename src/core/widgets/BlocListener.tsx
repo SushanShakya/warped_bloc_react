@@ -18,9 +18,9 @@ const BlocListener: FC<ListenerParam> = ({
 }) => {
 
     useEffect(() => {
-        bloc.listen(listener);
+        let cur = bloc.listen(listener);
         return () => {
-            bloc.removeListener();
+            bloc.removeListener(cur);
         };
     }, [bloc]);
 

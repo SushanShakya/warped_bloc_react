@@ -1,6 +1,6 @@
 {
   "name": "warped_bloc_react",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "BLoC like State Management Solution For React",
   "private": false,
   "author": "SushanShakya <sushaanshakya88@gmail.com>",

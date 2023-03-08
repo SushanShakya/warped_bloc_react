@@ -1,26 +1,32 @@
 import { BlocState, InitialState } from '../states/states'
 
-class Cubit {
-    state: BlocState
-    listeners: Array<Function>
 
-    constructor(state: BlocState | null = null) {
+class Cubit {
+    state: any
+    listeners: Map<number, Function>
+    count: number
+
+    constructor(state: any | null = null) {
         this.state = state ?? new InitialState();
-        this.listeners = [];
+        this.count = 0;
+        this.listeners = new Map<number, Function>();
     }
 
     listen = (fn: Function) => {
-        this.listeners.push(fn);
+        let cur = this.count;
+        this.listeners[cur] = fn;
+        this.count++;
+        return cur
     }
 
-    removeListener = () => {
-        this.listeners = [];
+    removeListener = (count: number) => {
+        delete this.listeners[count]
     }
 
     publishToListeners = (state: BlocState) => {
-        for (let listener of this.listeners) {
+        this.listeners.forEach((listener, k) => {
             listener(state);
-        }
+        })
     }
 
     emit = (state: BlocState) => {
