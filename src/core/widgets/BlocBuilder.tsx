@@ -1,27 +1,31 @@
 import { useEffect, useState, FC, ReactElement } from "react";
 import Cubit from "../cubit/Cubit";
+import AsyncCubit from "../cubit/AsyncCubit";
 import BlocState from "../states/BlocState";
 
+export type BuilderFunction = (state: any) => ReactElement<any, any>;
 
-type BuilderProps = {
-    bloc: Cubit,
-    builder: BuilderFunction
-}
-
-export type BuilderFunction = (state: BlocState) => ReactElement<any, any>;
-
-const BlocBuilder: FC<BuilderProps> = ({
+const BlocBuilder = <T extends Cubit>({
     bloc,
     builder
+}: {
+    bloc: T,
+    builder: BuilderFunction
 }) => {
-    let [state, setState] = useState(bloc.state);
+    let isAsync = (bloc instanceof AsyncCubit)
+    let [state, setState] = useState(isAsync ? (bloc.state as BlocState) : (bloc.state as any))
 
     useEffect(() => {
-        let cur = bloc.listen((state: BlocState) => {
-            console.log(state);
-            setState(state);
-        });
-
+        let cur: number
+        if (isAsync) {
+            cur = bloc.listen((state: BlocState) => {
+                setState(state)
+            });
+        } else {
+            cur = bloc.listen((state: any) => {
+                setState(state)
+            });
+        }
         return () => {
             bloc.removeListener(cur);
         }

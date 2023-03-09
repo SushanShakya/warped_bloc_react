@@ -1,20 +1,16 @@
-import { useEffect, FC, ReactElement } from "react";
+import { useEffect, ReactElement } from "react";
 import Cubit from "../cubit/Cubit";
-import BlocState from "../states/BlocState";
 
-export type ListenerFunction = (state: BlocState) => void
+export type ListenerFunction = (state: any) => void
 
-type ListenerParam = {
-    bloc: Cubit,
-    listener: ListenerFunction,
-    child: ReactElement<any, any>,
-}
-
-
-const BlocListener: FC<ListenerParam> = ({
+const BlocListener = <T extends Cubit>({
     bloc,
     listener,
     child
+}: {
+    bloc: T,
+    listener: ListenerFunction,
+    child: ReactElement,
 }) => {
 
     useEffect(() => {

@@ -1,3 +1,3 @@
-interface BlocState { }
+abstract class BlocState { }
 
 export default BlocState;

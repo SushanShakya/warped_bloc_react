@@ -14,17 +14,17 @@ class Cubit {
 
     listen = (fn: Function) => {
         let cur = this.count;
-        this.listeners[cur] = fn;
+        this.listeners.set(cur, fn);
         this.count++;
         return cur
     }
 
     removeListener = (count: number) => {
-        delete this.listeners[count]
+        this.listeners.delete(count)
     }
 
     publishToListeners = (state: BlocState) => {
-        this.listeners.forEach((listener, k) => {
+        this.listeners.forEach((listener) => {
             listener(state);
         })
     }
