@@ -3,7 +3,7 @@ import Cubit from "../cubit/Cubit";
 
 export type ListenerFunction = (state: any) => void
 
-const BlocListener = <T extends Cubit>({
+const BlocListener = <T extends Cubit<any>>({
     bloc,
     listener,
     child

@@ -4,7 +4,7 @@ import BlocListener, { ListenerFunction } from './BlocListener';
 import BlocBuilder, { BuilderFunction } from './BlocBuilder';
 
 type ConsumerParam = {
-    bloc: Cubit,
+    bloc: Cubit<any>,
     listener: ListenerFunction,
     builder: BuilderFunction
 }

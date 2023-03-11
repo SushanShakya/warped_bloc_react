@@ -5,7 +5,7 @@ import BlocState from "../states/BlocState";
 
 export type BuilderFunction = (state: any) => ReactElement<any, any>;
 
-const BlocBuilder = <T extends Cubit>({
+const BlocBuilder = <T extends Cubit<any>>({
     bloc,
     builder
 }: {

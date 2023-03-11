@@ -1,13 +1,11 @@
-import { BlocState, InitialState } from '../states/states'
 
-
-class Cubit {
-    state: any
+class Cubit<T> {
+    state: T
     listeners: Map<number, Function>
     count: number
 
-    constructor(state: any | null = null) {
-        this.state = state ?? new InitialState();
+    constructor(state: T | null = null) {
+        this.state = state;
         this.count = 0;
         this.listeners = new Map<number, Function>();
     }
@@ -23,13 +21,13 @@ class Cubit {
         this.listeners.delete(count)
     }
 
-    publishToListeners = (state: BlocState) => {
+    publishToListeners = (state: T) => {
         this.listeners.forEach((listener) => {
             listener(state);
         })
     }
 
-    emit = (state: BlocState) => {
+    emit = (state: T) => {
         this.state = state;
         this.publishToListeners(state);
     }
